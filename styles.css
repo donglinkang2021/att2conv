@@ -1,6 +1,8 @@
 .image-container {
+    width: 192px;
+    height: 192px;
     display: grid;
-    background-image: url('transparent_image.png'); /* 初始透明图片 */
+    background-image: url('learn/gen/transparent_image.png'); /* 初始透明图片 */
     grid-template-columns: repeat(3, 64px);
     grid-template-rows: repeat(3, 64px);
 }
@@ -9,19 +11,14 @@
     width: 64px;
     height: 64px;
     background-size: cover;
+    background-image: url('learn/gen/transparent_image.png'); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transition: background 0.3s ease-in-out;
 }
 
-/* #image_1 { background-image: url('learn/gen/image_1.jpg'); }
-#image_2 { background-image: url('learn/gen/image_2.jpg'); }
-#image_3 { background-image: url('learn/gen/image_3.jpg'); }
-#image_4 { background-image: url('learn/gen/image_4.jpg'); }
-#image_5 { background-image: url('learn/gen/image_5.jpg'); }
-#image_6 { background-image: url('learn/gen/image_6.jpg'); }
-#image_7 { background-image: url('learn/gen/image_7.jpg'); }
-#image_8 { background-image: url('learn/gen/image_8.jpg'); }
-#image_9 { background-image: url('learn/gen/image_9.jpg'); } */
 
 .image:hover {
-    filter: brightness(80%);
+    filter: brightness(50%);
+    transform: scale(1.1); /* 10% larger */
 }
+
