@@ -1,24 +1,41 @@
-.image-container {
-    width: 192px;
-    height: 192px;
-    display: grid;
-    background-image: url('learn/gen/transparent_image.png'); /* 初始透明图片 */
-    grid-template-columns: repeat(3, 64px);
-    grid-template-rows: repeat(3, 64px);
+.block-container {
+    position: relative;
 }
 
-.image {
-    width: 64px;
-    height: 64px;
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 480px;
+    display: grid;
+    background-image: url('images/sails_480.png'); /* 初始透明图片 */
+    grid-template-columns: repeat(32, 15px);
+    grid-template-rows: repeat(32, 15px);
+}
+
+.image-container {
+    opacity: 0.6; /* 设置半透明度 */
+}
+
+.base-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.patch-image {
+    width: 15px;
+    height: 15px;
     background-size: cover;
     background-image: url('learn/gen/transparent_image.png'); 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: background 0.3s ease-in-out;
 }
 
 
-.image:hover {
-    filter: brightness(50%);
+.patch-image:hover {
+    filter: brightness(80%);
     transform: scale(1.1); /* 10% larger */
 }
 
