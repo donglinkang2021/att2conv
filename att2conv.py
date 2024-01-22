@@ -11,20 +11,20 @@ def attention_DotProduct(queries, keys):
     Parameters
     ----------
     @param queries: torch.Tensor
-        queries, shape (m, d)
+        queries, shape (m, d) or (b, m, d)
     @param keys: torch.Tensor
-        keys, shape (n, d)
+        keys, shape (n, d) or (b, n, d)
     @returns: torch.Tensor
-        attention_weights, shape (m, n)
+        attention_weights, shape (m, n) or (b, m, n)
     """
     d = queries.shape[-1]
 
     return F.softmax(
         torch.matmul(
             queries, 
-            keys.T
+            keys.transpose(-2,-1)
         ) / math.sqrt(d), 
-        dim=1
+        dim=-1
     )
 
 def show_attention(
